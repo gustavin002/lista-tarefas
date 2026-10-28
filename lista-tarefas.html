@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <main>
+        <h1>Lista de Tarefas</h1>
+        <ol id="lista-tarefas">
+            <li hidden id="aviso">Nenhuma Tarefa Adicionada</li>
+        </ol>
+        <p>Adicione suas Tarefas!</p>
+        <label for="tarefa">Tarefa:</label>
+        <input id="tarefa" name="adicionar">
+        <button id="adicionar">Adicionar</button>
+        <label for="indice-excluir">Número da tarefa:</label>
+        <input type="number" id="indice-excluir" min="1">
+        <button id="excluir">Excluir</button>
+    </main>
+    <script src="js/lista-tarefas.js"></script>
+</body>
+</html>

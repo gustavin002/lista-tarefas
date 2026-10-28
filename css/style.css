@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #F1F5F9;
+    --cor-cartao: #FFFFFF;
+    --cor-texto: #1E293B;
+    --cor-texto-secundario: #64748B;
+    --cor-primaria: #2563EB;
+    --cor-primaria-hover: #1D4ED8;
+    --cor-primaria-suave: #DBEAFE;
+    --cor-borda: #CBD5E1;
+    --cor-lista: #F8FAFC;
+    --cor-excluir: #DC2626;
+    --cor-excluir-hover: #B91C1C;
+    --cor-sombra: rgba(15, 23, 42, 0.08);
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+main {
+    width: 100%;
+    max-width: 720px;
+    padding: 36px;
+    background: var(--cor-cartao);
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px var(--cor-sombra);
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: var(--cor-texto);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.8px;
+}
+
+main > p {
+    margin-bottom: 28px;
+    color: var(--cor-texto-secundario);
+    text-align: center;
+    font-size: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    outline: none;
+    background: #FFFFFF;
+    color: var(--cor-texto);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+    color: #94A3B8;
+}
+
+input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button {
+    min-height: 48px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--cor-primaria-suave);
+    outline-offset: 3px;
+}
+
+#tarefa {
+    margin-bottom: 16px;
+}
+
+#adicionar {
+    width: 100%;
+    margin-bottom: 28px;
+    background: var(--cor-primaria);
+}
+
+#adicionar:hover {
+    background: var(--cor-primaria-hover);
+}
+
+#lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 28px;
+    padding: 0;
+    list-style-position: inside;
+}
+
+#lista-tarefas li {
+    padding: 14px 16px;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    background: var(--cor-lista);
+    color: var(--cor-texto);
+    overflow-wrap: anywhere;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#lista-tarefas li::marker {
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+#lista-tarefas li#aviso {
+    border: 1px dashed var(--cor-borda);
+    background: #F8FAFC;
+    color: var(--cor-texto-secundario);
+    text-align: center;
+}
+
+label[for="indice-excluir"] {
+    margin-top: 4px;
+}
+
+#indice-excluir {
+    margin-bottom: 12px;
+    appearance: textfield;
+}
+
+#indice-excluir::-webkit-inner-spin-button,
+#indice-excluir::-webkit-outer-spin-button {
+    margin: 0;
+    appearance: none;
+}
+
+#excluir {
+    width: 100%;
+    background: var(--cor-excluir);
+}
+
+#excluir:hover {
+    background: var(--cor-excluir-hover);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    main {
+        padding: 26px 20px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    main > p {
+        font-size: 0.95rem;
+    }
+
+    #lista-tarefas {
+        gap: 8px;
+    }
+
+    #lista-tarefas li {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 14px 8px;
+    }
+
+    main {
+        padding: 20px 14px;
+    }
+
+    h1 {
+        font-size: 1.45rem;
+    }
+
+    input,
+    button {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 11px 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
