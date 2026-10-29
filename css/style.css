@@ -121,7 +121,7 @@ button:focus-visible {
 
 #adicionar {
     width: 100%;
-    margin-bottom: 28px;
+    margin-bottom: 12px;
     background: var(--cor-primaria);
 }
 
@@ -145,6 +145,7 @@ button:focus-visible {
     background: var(--cor-lista);
     color: var(--cor-texto);
     overflow-wrap: anywhere;
+    cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -153,26 +154,17 @@ button:focus-visible {
     font-weight: 700;
 }
 
+#lista-tarefas li.selecionada {
+    border-color: var(--cor-primaria);
+    background: var(--cor-primaria-suave);
+}
+
 #lista-tarefas li#aviso {
     border: 1px dashed var(--cor-borda);
     background: #F8FAFC;
     color: var(--cor-texto-secundario);
     text-align: center;
-}
-
-label[for="indice-excluir"] {
-    margin-top: 4px;
-}
-
-#indice-excluir {
-    margin-bottom: 12px;
-    appearance: textfield;
-}
-
-#indice-excluir::-webkit-inner-spin-button,
-#indice-excluir::-webkit-outer-spin-button {
-    margin: 0;
-    appearance: none;
+    cursor: default;
 }
 
 #excluir {
@@ -235,15 +227,4 @@ label[for="indice-excluir"] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-    }
-}
+    html
